@@ -1,0 +1,12 @@
+# IDENTIFIER LA CONTRIBUTION D'INRIA AUX PROJETS ANR DANS LES PUBLICATIONS DE HAL
+
+## Script
+Le script "Publis_ANR_de_HAL.ipynb" (Jupyter Notebook) :
+1. identifie les équipes Inria
+2. identifie les projets ANR mentionnés en métadonnée par les publications de la collection INRIA
+3. Pour ces projets : recense tous les dépôts HAL mentionnant ces financements
+4. Génère des graphiques par projet, un graphique global et un "heatmap" pour les contributions Inria
+5. Génère une page html qui permet de visualiser tous ces graphiques
+
+Source : HAL
+Auteur : K. Guha, Datalake (Inria)

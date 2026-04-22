@@ -1,5 +1,5 @@
 
-#Identifier la contribution d'Inria aux projet ANR dans les publications de HAL
+# Identifier la contribution d'Inria aux projet ANR dans les publications de HAL
 
 ## Script
 Le script "Publis_ANR_de_HAL.ipynb" (Jupyter Notebook) :

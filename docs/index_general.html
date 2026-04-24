@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ANR - Participation Inria source HAL</title>
+
+<style>
+    body { display:flex; margin:0; font-family:Arial; }
+    .sidebar { width:320px; height:100vh; overflow-y:auto; background:#f5f5f5; padding:10px; }
+    button { width:100%; padding:6px; margin:2px 0; }
+    .content { flex:1; height:100vh; overflow-y:auto; padding:20px; }
+</style>
+
+<script>
+function loadGraph(f){ document.getElementById("frame").src = f; }
+
+function filterANR(){
+ let i=document.getElementById("search").value.toLowerCase();
+ for(let b of document.getElementsByClassName("anr")){
+  b.style.display=b.innerText.toLowerCase().includes(i)?"block":"none";
+ }
+}
+</script>
+
+</head>
+<body>
+
+<div class="sidebar">
+
+<h3>Publications d'Inria dans les projets ANR (2020-2025)</h3>
+
+<h3>
+  <img src="https://inria.hal.science/assets/favicon/favicon-16x16.png">
+  <a href="ANR_Hal/index_Hal.html">Chiffres issus de HAL</a>
+</h3>
+<h3>
+  <img src="https://avatars.githubusercontent.com/u/1500527?s=280&v=4" height="20">
+  <a href="ANR_OpenAlex/index_OpenAlex.html">Chiffres issus d'OpenAlex</a>
+</h3>
+Réalisation : Datalake, DCIS/DGD-S
+
+
+</div>
+<div id="content" class="content">
+    <h2> Projets ANR et contributions Inria - source HAL</h2>
+        Méthodologie:
+        <ul><li>- Identifier les projets ANR cités par les publications de la collection INRIA de HAL (2020-2025) : cela permet d'identifier les publications indiquant un financement ANR et au moins un auteur d'une équipe Inria</li>
+        <li>- Rechercher toutes les publications dans HAL pour ces projets ANR (pour identifier aussi les publications sans auteurs Inria)</li>
+    <li>- Réaliser une série de graphiques interactifs : volume global, volume absolu et relatif des contributions Inria, volume et proportions par types de document, puis volume par structure et par projet ANR</li></ul>
+    <h3><a href="ANR_Hal/index_Hal.html" target=_blank>Voir tous les graphiques (source HAL)</a></h3>
+
+    <h2> Projets ANR et contributions Inria - source OpenAlex</h2>
+        <p> A fins de comparaison avec OpenAlex, quelques graphiques ont été générés sur le même principe&nbsp;:</p>
+        <ul><li>- Identifier les projets ANR cités par les publications de la collection INRIA de HAL  (2020-2025) : cela permet d'identifier les publications indiquant un financement ANR et au moins un auteur d'une équipe Inria</li>
+        <li>- Rechercher toutes les publications de ces projets dans OpenAlex
+    <li>- Réaliser une série de graphiques interactifs : volume global, volume absolu et relatif des contributions Inria, volume par structure et par projet ANR</li></ul>
+    À noter : OpenAlex n'ayant pas de type de document "Conference paper", il n'a pas été possible d'établir un graphique assez détaillé par type de document à partir de cette source.
+    <h3><a href="ANR_OpenAlex/index_OpenAlex.html" target=_blank>Voir tous les graphiques (source OpenAlex)</a></h3>
+    </div>
+
+
+
+</body>
+</html>

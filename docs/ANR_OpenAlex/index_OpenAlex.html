@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ANR - OpenAlex Inria Dashboard</title>
+
+<style>
+body { display:flex; margin:0; font-family:Arial; }
+
+.sidebar {
+    width:320px;
+    height:100vh;
+    overflow-y:auto;
+    background:#f5f5f5;
+    padding:10px;
+    border-right:1px solid #ddd;
+}
+
+button {
+    width:100%;
+    padding:6px;
+    margin:2px 0;
+    border:none;
+    background:#fff;
+    cursor:pointer;
+    text-align:left;
+}
+
+button:hover {
+    background:#eaeaea;
+}
+
+h3 {
+    margin-top:15px;
+}
+
+iframe {
+    flex:1;
+    height:100vh;
+    border:none;
+}
+
+input {
+    width:100%;
+    padding:6px;
+    margin-bottom:8px;
+    box-sizing:border-box;
+}
+</style>
+
+<script>
+function loadGraph(f){
+    document.getElementById("frame").src = f;
+}
+
+function filterANR(){
+    let val = document.getElementById("search").value.toLowerCase();
+    let buttons = document.getElementsByClassName("anr");
+
+    for(let b of buttons){
+        b.style.display = b.innerText.toLowerCase().includes(val) ? "block" : "none";
+    }
+}
+</script>
+
+</head>
+<body>
+
+<div class="sidebar">
+<h3>Contributions Inria d'après OpenAlex</h3>
+
+<h3>🌍 Global</h3>
+<button onclick="loadGraph('ALL.html')">Top affiliations</button>
+
+<h3>🔥 Inria</h3>
+<button onclick="loadGraph('INRIA_heatmap.html')">Publications Inria</button>
+
+<h3>🔎 ANR</h3>
+
+<input id="search" onkeyup="filterANR()" placeholder="Filtrer ANR...">
+<button class="anr" onclick="loadGraph('ANR-09-BLAN-0245.html')">ANR-09-BLAN-0245</button><button class="anr" onclick="loadGraph('ANR-10-AIRT-0005.html')">ANR-10-AIRT-0005</button><button class="anr" onclick="loadGraph('ANR-10-BLAN-1701.html')">ANR-10-BLAN-1701</button><button class="anr" onclick="loadGraph('ANR-10-BLAN-1805.html')">ANR-10-BLAN-1805</button><button class="anr" onclick="loadGraph('ANR-10-COHO-0002.html')">ANR-10-COHO-0002</button><button class="anr" onclick="loadGraph('ANR-10-COHO-0004.html')">ANR-10-COHO-0004</button><button class="anr" onclick="loadGraph('ANR-10-EQPX-0044.html')">ANR-10-EQPX-0044</button><button class="anr" onclick="loadGraph('ANR-10-IAHU-0002.html')">ANR-10-IAHU-0002</button><button class="anr" onclick="loadGraph('ANR-10-IAHU-0006.html')">ANR-10-IAHU-0006</button><button class="anr" onclick="loadGraph('ANR-10-IDEX-0001.html')">ANR-10-IDEX-0001</button><button class="anr" onclick="loadGraph('ANR-10-IDEX-0002.html')">ANR-10-IDEX-0002</button><button class="anr" onclick="loadGraph('ANR-10-IDEX-0003.html')">ANR-10-IDEX-0003</button><button class="anr" onclick="loadGraph('ANR-10-INBS-0004.html')">ANR-10-INBS-0004</button><button class="anr" onclick="loadGraph('ANR-10-LABX-0007.html')">ANR-10-LABX-0007</button><button class="anr" onclick="loadGraph('ANR-10-LABX-0020.html')">ANR-10-LABX-0020</button><button class="anr" onclick="loadGraph('ANR-10-LABX-0024.html')">ANR-10-LABX-0024</button><button class="anr" onclick="loadGraph('ANR-10-LABX-0070.html')">ANR-10-LABX-0070</button><button class="anr" onclick="loadGraph('ANR-11-IDEX-0003.html')">ANR-11-IDEX-0003</button><button class="anr" onclick="loadGraph('ANR-11-IDEX-0005.html')">ANR-11-IDEX-0005</button><button class="anr" onclick="loadGraph('ANR-11-IDEX-0007.html')">ANR-11-IDEX-0007</button><button class="anr" onclick="loadGraph('ANR-11-INBS-0006.html')">ANR-11-INBS-0006</button><button class="anr" onclick="loadGraph('ANR-11-LABX-0007.html')">ANR-11-LABX-0007</button><button class="anr" onclick="loadGraph('ANR-11-LABX-0020.html')">ANR-11-LABX-0020</button><button class="anr" onclick="loadGraph('ANR-11-LABX-0028.html')">ANR-11-LABX-0028</button><button class="anr" onclick="loadGraph('ANR-11-LABX-0031.html')">ANR-11-LABX-0031</button><button class="anr" onclick="loadGraph('ANR-11-LABX-0056.html')">ANR-11-LABX-0056</button><button class="anr" onclick="loadGraph('ANR-13-BS01-0004.html')">ANR-13-BS01-0004</button><button class="anr" onclick="loadGraph('ANR-13-BS01-0008.html')">ANR-13-BS01-0008</button><button class="anr" onclick="loadGraph('ANR-13-BS02-0007.html')">ANR-13-BS02-0007</button><button class="anr" onclick="loadGraph('ANR-14-CE23-0003.html')">ANR-14-CE23-0003</button><button class="anr" onclick="loadGraph('ANR-14-CE23-0007.html')">ANR-14-CE23-0007</button><button class="anr" onclick="loadGraph('ANR-14-CE25-0005.html')">ANR-14-CE25-0005</button><button class="anr" onclick="loadGraph('ANR-14-CE25-0018.html')">ANR-14-CE25-0018</button><button class="anr" onclick="loadGraph('ANR-15-CE23-0007.html')">ANR-15-CE23-0007</button><button class="anr" onclick="loadGraph('ANR-15-CE23-0028.html')">ANR-15-CE23-0028</button><button class="anr" onclick="loadGraph('ANR-15-CE38-0011.html')">ANR-15-CE38-0011</button><button class="anr" onclick="loadGraph('ANR-15-CE40-0018.html')">ANR-15-CE40-0018</button><button class="anr" onclick="loadGraph('ANR-15-IDEX-0001.html')">ANR-15-IDEX-0001</button><button class="anr" onclick="loadGraph('ANR-15-IDEX-0002.html')">ANR-15-IDEX-0002</button><button class="anr" onclick="loadGraph('ANR-15-IDEX-0004.html')">ANR-15-IDEX-0004</button><button class="anr" onclick="loadGraph('ANR-16-CE23-0016.html')">ANR-16-CE23-0016</button><button class="anr" onclick="loadGraph('ANR-16-CE25-0011.html')">ANR-16-CE25-0011</button><button class="anr" onclick="loadGraph('ANR-16-CE33-0004.html')">ANR-16-CE33-0004</button><button class="anr" onclick="loadGraph('ANR-16-CE39-0006.html')">ANR-16-CE39-0006</button><button class="anr" onclick="loadGraph('ANR-16-CE40-0002.html')">ANR-16-CE40-0002</button><button class="anr" onclick="loadGraph('ANR-16-CE40-0023.html')">ANR-16-CE40-0023</button><button class="anr" onclick="loadGraph('ANR-16-CONV-0004.html')">ANR-16-CONV-0004</button><button class="anr" onclick="loadGraph('ANR-16-IDEX-0005.html')">ANR-16-IDEX-0005</button><button class="anr" onclick="loadGraph('ANR-17-CE25-0009.html')">ANR-17-CE25-0009</button><button class="anr" onclick="loadGraph('ANR-17-CE39-0004.html')">ANR-17-CE39-0004</button><button class="anr" onclick="loadGraph('ANR-17-CE40-0009.html')">ANR-17-CE40-0009</button><button class="anr" onclick="loadGraph('ANR-17-CONV-0003.html')">ANR-17-CONV-0003</button><button class="anr" onclick="loadGraph('ANR-17-EURE-0004.html')">ANR-17-EURE-0004</button><button class="anr" onclick="loadGraph('ANR-17-EURE-0017.html')">ANR-17-EURE-0017</button><button class="anr" onclick="loadGraph('ANR-18-CE23-0003.html')">ANR-18-CE23-0003</button><button class="anr" onclick="loadGraph('ANR-18-CE25-0007.html')">ANR-18-CE25-0007</button><button class="anr" onclick="loadGraph('ANR-18-CE40-0010.html')">ANR-18-CE40-0010</button><button class="anr" onclick="loadGraph('ANR-18-EURE-0022.html')">ANR-18-EURE-0022</button><button class="anr" onclick="loadGraph('ANR-19-CE23-0026.html')">ANR-19-CE23-0026</button><button class="anr" onclick="loadGraph('ANR-19-CE40-0010.html')">ANR-19-CE40-0010</button><button class="anr" onclick="loadGraph('ANR-19-CE40-0018.html')">ANR-19-CE40-0018</button><button class="anr" onclick="loadGraph('ANR-19-CE46-0009.html')">ANR-19-CE46-0009</button><button class="anr" onclick="loadGraph('ANR-19-CE48-0008.html')">ANR-19-CE48-0008</button><button class="anr" onclick="loadGraph('ANR-19-CE48-0013.html')">ANR-19-CE48-0013</button><button class="anr" onclick="loadGraph('ANR-19-CHIA-0009.html')">ANR-19-CHIA-0009</button><button class="anr" onclick="loadGraph('ANR-19-CHIA-0021.html')">ANR-19-CHIA-0021</button><button class="anr" onclick="loadGraph('ANR-19-P3IA-0001.html')">ANR-19-P3IA-0001</button><button class="anr" onclick="loadGraph('ANR-19-P3IA-0002.html')">ANR-19-P3IA-0002</button><button class="anr" onclick="loadGraph('ANR-19-P3IA-0003.html')">ANR-19-P3IA-0003</button><button class="anr" onclick="loadGraph('ANR-19-P3IA-0004.html')">ANR-19-P3IA-0004</button><button class="anr" onclick="loadGraph('ANR-20-CE25-0002.html')">ANR-20-CE25-0002</button><button class="anr" onclick="loadGraph('ANR-20-CE40-0009.html')">ANR-20-CE40-0009</button><button class="anr" onclick="loadGraph('ANR-20-CE48-0014.html')">ANR-20-CE48-0014</button><button class="anr" onclick="loadGraph('ANR-20-CHIA-0011.html')">ANR-20-CHIA-0011</button><button class="anr" onclick="loadGraph('ANR-20-CHIA-0015.html')">ANR-20-CHIA-0015</button><button class="anr" onclick="loadGraph('ANR-21-CE39-0009.html')">ANR-21-CE39-0009</button><button class="anr" onclick="loadGraph('ANR-21-CE40-0006.html')">ANR-21-CE40-0006</button><button class="anr" onclick="loadGraph('ANR-21-ESRE-0030.html')">ANR-21-ESRE-0030</button><button class="anr" onclick="loadGraph('ANR-22-CE23-0003.html')">ANR-22-CE23-0003</button><button class="anr" onclick="loadGraph('ANR-22-PEAE-0011.html')">ANR-22-PEAE-0011</button><button class="anr" onclick="loadGraph('ANR-22-PECY-0002.html')">ANR-22-PECY-0002</button><button class="anr" onclick="loadGraph('ANR-22-PECY-0006.html')">ANR-22-PECY-0006</button><button class="anr" onclick="loadGraph('ANR-22-PECY-0010.html')">ANR-22-PECY-0010</button><button class="anr" onclick="loadGraph('ANR-22-PETQ-0006.html')">ANR-22-PETQ-0006</button><button class="anr" onclick="loadGraph('ANR-22-PETQ-0007.html')">ANR-22-PETQ-0007</button><button class="anr" onclick="loadGraph('ANR-22-PETQ-0008.html')">ANR-22-PETQ-0008</button><button class="anr" onclick="loadGraph('ANR-22-PNCQ-0002.html')">ANR-22-PNCQ-0002</button><button class="anr" onclick="loadGraph('ANR-23-IACL-0001.html')">ANR-23-IACL-0001</button><button class="anr" onclick="loadGraph('ANR-23-IACL-0008.html')">ANR-23-IACL-0008</button><button class="anr" onclick="loadGraph('ANR-23-PECL-0003.html')">ANR-23-PECL-0003</button><button class="anr" onclick="loadGraph('ANR-23-PEIA-0003.html')">ANR-23-PEIA-0003</button><button class="anr" onclick="loadGraph('ANR-23-PEIA-0004.html')">ANR-23-PEIA-0004</button><button class="anr" onclick="loadGraph('ANR-23-PEIA-0008.html')">ANR-23-PEIA-0008</button><button class="anr" onclick="loadGraph('ANR-23-PEIA-0010.html')">ANR-23-PEIA-0010</button>
+</div>
+
+<iframe id="frame" src="ALL.html"></iframe>
+
+</body>
+</html>
